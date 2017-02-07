@@ -20,10 +20,11 @@ function reset() {
   print(focusTimer, "#focus-timer");
   printFocusTimer(focusTimer);
   $("#focus-setter-container button").prop("disabled", false);
+  $("#break-setter-container button").prop("disabled", false);
   $("#start").prop("disabled", false);
-  $("#pause").prop("disabled", true).text("Pause").css("background", "#fff195");
   $("#timer").css("color", "lightgray");
   $("#focus-timer").css("color", "black");
+  $("#break-timer").css("color", "black");
 }
 
 $(document).ready(() => {
@@ -59,13 +60,16 @@ $(document).ready(() => {
 
   $("#start").on("click", button => {
     $("#start").prop("disabled", true);
-    $("#pause").prop("disabled", false);
     $("#focus-setter-container button").prop("disabled", true);
+    $("#break-setter-container button").prop("disabled", true);
     $("#timer").css("color", "black");
     $("#focus-timer").css("color", "lightgray");
+    $("#break-timer").css("color", "lightgray");
+    let memory = focusTimer;
     focusTimer--;
     let seconds = 60;
-    let focusCounter = setInterval(timer, 1);
+    let isFocusMode = true;
+    let counter = setInterval(timer, 1000);
 
     function timer() {
       let minutesString = focusTimer.toString();
@@ -87,24 +91,22 @@ $(document).ready(() => {
 
       if (seconds === 60) secondsString = "00";
 
-      if (minutesString === "00" && secondsString === "00") {
-        clearInterval(focusCounter);
-      }
-
       $("#reset").on("click", () => {
-        clearInterval(focusCounter);
+        clearInterval(counter);
       });
 
       $("#timer").text(`${minutesString}:${secondsString}`);
-    }
-  });
 
-  $("#pause").on("click", button => {
-    if ($("#pause").text() === "Pause") {
-      $("#pause").text("Resume").css("background", "white");
-    }
-    else {
-      $("#pause").text("Pause").css("background", "#fff195");
+      if (minutesString === "00" && secondsString === "00") {
+        if (isFocusMode) {
+          focusTimer = breakTimer;
+          isFocusMode = false;
+        }
+        else {
+          focusTimer = memory;
+          isFocusMode = true;
+        }
+      }
     }
   });
 

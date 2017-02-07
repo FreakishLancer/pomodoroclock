@@ -28,7 +28,6 @@ html
         section#clock-control
           #control-buttons
             button#start.btn Start
-            button#pause.btn(disabled="true") Pause
             button#reset.btn Reset
         section.setters
           #break-setter-container
@@ -43,6 +42,11 @@ html
             span#focus-timer  25:00
             button.add.btn.btn-sm
               span +
+        section#setter-text
+          div#break-text-container
+            span#break-text Break Interval
+          div#focus-text-container
+            span#focus-text Focus Interval
 
     script(src="https://code.jquery.com/jquery-3.1.1.min.js"
 			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="

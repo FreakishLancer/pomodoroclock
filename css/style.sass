@@ -1,6 +1,6 @@
 $pomodoro-red: #ff6347
-$start-color: #83e0a2
-$pause-color: #fff195
+$start-background: #83e0a2
+$text-background: #fff195
 
 body
   background: $pomodoro-red
@@ -54,8 +54,8 @@ main
     display: flex
 
   button
-    border-radius: 0
-    width: 100px
+    border-radius: .1em
+    width: 150px
     font-family: Arya
     transition-duration: .08s
 
@@ -65,26 +65,16 @@ main
     &:active
       font-size: 1.5em
 
-  button:first-child, button:nth-child(2)
+  button:first-child
+    background: $start-background
     border-right: 3px solid $pomodoro-red
 
-  button:nth-child(2), button:last-child
-    border-left: 3px solid $pomodoro-red
-
-  button:first-child
-    background: $start-color
-
     &:hover
-      background: $start-color - 100
-  
-  button:nth-child(2)
-    background: $pause-color
-
-    &:hover
-      font-weight: bolder
+      background: $start-background - 100
   
   button:last-child
     background: lightgray
+    border-left: 3px solid $pomodoro-red
     
     &:hover
       background: lightgray - 100
@@ -126,7 +116,6 @@ main
       width: inherit
       line-height: 20px
 
-
 #break-setter-container, #focus-setter-container
   height: inherit
   width: 150px
@@ -136,5 +125,28 @@ main
   border-right: 3px solid $pomodoro-red
 
 #focus-setter-container
+  float: right
+  border-left: 3px solid $pomodoro-red
+
+#setter-text
+  border-radius: .1em
+  margin: 5px auto auto
+  width: 300px
+  height: 20px
+  background: white
+  text-align: center
+
+
+#break-text-container, #focus-text-container
+  line-height: 20px
+  height: inherit
+  width: 150px
+  background: $text-background
+
+#break-text-container
+  float: left
+  border-right: 3px solid $pomodoro-red
+
+#focus-text-container
   float: right
   border-left: 3px solid $pomodoro-red

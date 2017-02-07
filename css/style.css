@@ -48,28 +48,22 @@ main {
   #clock-control #control-buttons {
     display: flex; }
   #clock-control button {
-    border-radius: 0;
-    width: 100px;
+    border-radius: .1em;
+    width: 150px;
     font-family: Arya;
     transition-duration: .08s; }
     #clock-control button:focus {
       box-shadow: none; }
     #clock-control button:active {
       font-size: 1.5em; }
-  #clock-control button:first-child, #clock-control button:nth-child(2) {
-    border-right: 3px solid #ff6347; }
-  #clock-control button:nth-child(2), #clock-control button:last-child {
-    border-left: 3px solid #ff6347; }
   #clock-control button:first-child {
-    background: #83e0a2; }
+    background: #83e0a2;
+    border-right: 3px solid #ff6347; }
     #clock-control button:first-child:hover {
       background: #1f7c3e; }
-  #clock-control button:nth-child(2) {
-    background: #fff195; }
-    #clock-control button:nth-child(2):hover {
-      font-weight: bolder; }
   #clock-control button:last-child {
-    background: lightgray; }
+    background: lightgray;
+    border-left: 3px solid #ff6347; }
     #clock-control button:last-child:hover {
       background: #6f6f6f; }
 
@@ -114,5 +108,27 @@ main {
   border-right: 3px solid #ff6347; }
 
 #focus-setter-container {
+  float: right;
+  border-left: 3px solid #ff6347; }
+
+#setter-text {
+  border-radius: .1em;
+  margin: 5px auto auto;
+  width: 300px;
+  height: 20px;
+  background: white;
+  text-align: center; }
+
+#break-text-container, #focus-text-container {
+  line-height: 20px;
+  height: inherit;
+  width: 150px;
+  background: #fff195; }
+
+#break-text-container {
+  float: left;
+  border-right: 3px solid #ff6347; }
+
+#focus-text-container {
   float: right;
   border-left: 3px solid #ff6347; }
