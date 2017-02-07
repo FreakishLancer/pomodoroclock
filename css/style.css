@@ -65,9 +65,9 @@ main {
     #clock-control button:first-child:hover {
       background: #1f7c3e; }
   #clock-control button:nth-child(2) {
-    background: #FFF195; }
+    background: #fff195; }
     #clock-control button:nth-child(2):hover {
-      background: #9b8d31; }
+      font-weight: bolder; }
   #clock-control button:last-child {
     background: lightgray; }
     #clock-control button:last-child:hover {
