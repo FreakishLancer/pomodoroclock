@@ -1,0 +1,56 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title Pomodoro Clock
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="description" content="A compact pomodoro clock")
+    meta(name="keywords" content="Pomodoro clock, timer, focus")
+    meta(name="author" content="Tony Pham")
+    link(rel="stylesheet"                 
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+      integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+      crossorigin="anonymous")
+    link(rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arya")
+    link(rel="stylesheet" href="css/style.css")
+  body
+    div.container
+      header.text-center
+        h1 Pomodoro Clock
+      main
+        section#clock
+          #timer-container
+              span#timer 25:00
+        section#clock-control
+          #control-buttons
+            button#start.btn Start
+            button#pause.btn Pause
+            button#reset.btn Reset
+        section.setters
+          #break-setter-container
+            button.sub.btn.btn-sm
+              span -
+            span#break-timer  05:00
+            button.add.btn.btn-sm
+              span +
+          #focus-setter-container
+            button.sub.btn.btn-sm
+              span -
+            span#focus-timer  25:00
+            button.add.btn.btn-sm
+              span +
+
+    script(src="https://code.jquery.com/jquery-3.1.1.min.js"
+			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+      integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+      crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+      integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+      crossorigin="anonymous")
+    script(src="js/script.js")
