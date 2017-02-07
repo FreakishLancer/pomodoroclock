@@ -25,6 +25,7 @@ function reset() {
   $("#timer").css("color", "lightgray");
   $("#focus-timer").css("color", "black");
   $("#break-timer").css("color", "black");
+  $("#mode").text("Click Start to focus!");
 }
 
 $(document).ready(() => {
@@ -65,6 +66,7 @@ $(document).ready(() => {
     $("#timer").css("color", "black");
     $("#focus-timer").css("color", "lightgray");
     $("#break-timer").css("color", "lightgray");
+    $("#mode").text("Focus Mode!");
     let memory = focusTimer;
     focusTimer--;
     let seconds = 60;
@@ -79,6 +81,19 @@ $(document).ready(() => {
       if (seconds === 0) {
         focusTimer--;
         seconds = 60;
+      }
+
+      if (focusTimer <= 0 && seconds === 60) {
+        if (isFocusMode) {
+          $("#mode").text("Break Mode!");
+          focusTimer = breakTimer - 1;
+          isFocusMode = false;
+        }
+        else {
+          $("#mode").text("Focus Mode!");
+          focusTimer = memory - 1;
+          isFocusMode = true;
+        }
       }
 
       focusTimer <= 9 ?
@@ -96,17 +111,6 @@ $(document).ready(() => {
       });
 
       $("#timer").text(`${minutesString}:${secondsString}`);
-
-      if (minutesString === "00" && secondsString === "00") {
-        if (isFocusMode) {
-          focusTimer = breakTimer;
-          isFocusMode = false;
-        }
-        else {
-          focusTimer = memory;
-          isFocusMode = true;
-        }
-      }
     }
   });
 
