@@ -13,8 +13,6 @@ function printFocusTimer(focusTimer) {
       $("#timer").text(`${focusTimer}:00`);
 }
 
-function countDown()
-
 function reset() {
   breakTimer = 5;
   focusTimer = 25;
